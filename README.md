@@ -5,6 +5,8 @@ XPT is a XSS polyglot testing platform allowing to test an XSS polyglot in more 
 
 This project use Google Chrome headless mode to test the execution of the XSS payload.
 
+[![asciicast](https://asciinema.org/a/Cz5fUApO4TZCLeAKM4TddddUX.png)](https://asciinema.org/a/Cz5fUApO4TZCLeAKM4TddddUX)
+
 ## Setup on Debian
 
 ~~~sh
