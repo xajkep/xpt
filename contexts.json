@@ -1,0 +1,275 @@
+{
+    "contexts": [
+        {
+            "name": "html-element",
+            "code": "<div>injection</div>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "<svg/onload=alert()//>"
+        },
+        {
+            "name": "html-attribute-value-double-quoted",
+            "code": "<div class=\"injection\">content</div>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "\" onclick=alert() a=\""
+        },
+        {
+            "name": "html-attribute-value-single-quoted",
+            "code": "<div class='injection'>content</div>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "' onclick=alert() a='"
+        },
+        {
+            "name": "html-attribute-value-not-quoted",
+            "code": "<div class=injection>content</div>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "a onclick=alert() "            
+        },
+        {
+            "name": "html-attribute-value-not-quoted-htmlescaped",
+            "code": "<div class=injection>content</div>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "test": "a onclick=alert() "
+        },
+        {
+            "name": "html-attribute-name",
+            "code": "<div injection='class'>injection</div>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "'><svg onload=alert()><b id='"
+        },
+        {
+            "name": "html-comment",
+            "code": "<!-- injection -->",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "--><svg/onload=alert()//>"
+        },
+        {
+            "name": "textarea-element",
+            "code": "<textarea>injection</textarea>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "</textarea><svg/onload=alert()//>"
+        },
+        {
+            "name": "title-element",
+            "code": "<title>injection</title>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": true,
+            "test": "</title><svg/onload=alert()//>"
+        },
+        {
+            "name": "style-element",
+            "code": "<style>injection</style>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": true,
+            "test": "</style><svg/onload=alert()//>"
+        },
+        {
+            "name": "style-multiline-comment",
+            "code": "<style>/* injection */</style>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": true,
+            "test": "*/</style><svg/onload=alert()//><style>/*"            
+        },
+        {
+            "name": "script-not-quoted",
+            "code": "<script>injection</script>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "alert();"
+        },
+        {
+            "name": "script-double-quoted",
+            "code": "<script>var bonjour = \"injection\";</script>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "\"-alert()-\""         
+        },
+        {
+            "name": "script-single-quoted",
+            "code": "<script>var bonjour = 'injection';</script>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "'-alert()-'"
+        },
+        {
+            "name": "script-line-comment",
+            "code": "<script>// injection </script>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "</script><script>alert();"            
+        },
+        {
+            "name": "script-line-comment-htmlescaped",
+            "code": "<script>// injection </script>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "test": "%0aalert();"
+        },
+        {
+            "name": "script-multiline-comment",
+            "code": "<script>/* injection */</script>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "*/alert();/*"
+        },
+        {
+            "name": "script-multiline-comment-htmlescaped",
+            "code": "<script>/* injection */</script>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "test": "*/alert();/*"
+        },
+        {
+            "name": "script-eval-backticked-htmlescaped",
+            "code": "<script>eval(`injection`);</script>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "test": "alert()"
+        },
+        {
+            "name": "script-eval-double-quoted-htmlescaped",
+            "code": "<script>eval(\"injection\");</script>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "test": "alert()"
+        },
+        {
+            "name": "script-innerhtml-single-quote-htmlescaped",
+            "code": "<div id='d'></div><script>var a='injection';document.getElementById('d').innerHTML = a;</script>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "test": "\\x3csvg onload=alert()\\x3e"
+        },
+        {
+            "name": "script-regular-expression-htmlescaped",
+            "code": "<script>var r = /injection/;</script>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "test": "a/;alert();//"
+        },
+        {
+            "name": "href-attribute-not-quoted",
+            "code": "<a href=injection>click</a>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "a onclick=alert() "
+        },
+        {
+            "name": "href-attribute-double-quoted",
+            "code": "<a href=\"injection\">click</a>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "a\" onclick=alert() a=\""
+        },
+        {
+            "name": "href-attribute-single-quoted",
+            "code": "<a href='injection'>click</a>",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "test": "a' onclick=alert() a='"            
+        },
+        {
+            "name": "href-attribute-single-quoted-htmlescaped",
+            "code": "<a href='injection'>click</a>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "test": "javascript:alert()"            
+        },
+        {
+            "name": "external-script",
+            "code": "injection",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "external": true,
+            "test": "alert();"
+        },
+        {
+            "name": "external-script-htmlescaped",
+            "code": "injection",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "external": true,
+            "test": "alert();"
+        },
+        {
+            "name": "external-script-single-quoted",
+            "code": "var b='injection';",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "external": true,
+            "test": "';alert();//"
+        },
+        {
+            "name": "external-script-double-quoted",
+            "code": "var b=\"injection\";",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "external": true,
+            "test": "\";alert();//"
+        },
+        {
+            "name": "external-script-template-string-backticked",
+            "code": "var b=String.raw`injection`;",
+            "urlencode": false,
+            "htmlescape": false,
+            "inhead": false,
+            "external": true,
+            "test": "`;alert()//"
+        },
+        {
+            "name": "iframe-srcdoc-htmlescaped",
+            "code": "<iframe srcdoc=\"injection\" ></iframe>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "external": false,
+            "test": "<svg onload=alert()>"
+        },
+        {
+            "name": "data-uri-texthtml-htmlescaped",
+            "code": "<object data=\"data:text/html;injection\"></object>",
+            "urlencode": false,
+            "htmlescape": true,
+            "inhead": false,
+            "external": false,
+            "test": ";base64,PHN2Zy9vbmxvYWQ9YWxlcnQoKT4K"
+        }
+    ]
+}

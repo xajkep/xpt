@@ -1,0 +1,28 @@
+{
+    "filters": [
+        {
+            "name": "html-comment",
+            "pattern": "-->"
+        },
+        {
+            "name": "lowercase-words",
+            "pattern": "(script|textarea|style|title)"
+        },
+        {
+            "name": "lowercase-js-event-handlers-format",
+            "pattern": "on\\w+="
+        },
+        {
+            "name": "js-event-handlers-format",
+            "pattern": "[oO][nN]\\w+="
+        },
+        {
+            "name": "html-closing-tags",
+            "pattern": "</\\w+>"
+        },
+        {
+            "name": "html-classic-tag-beginning",
+            "pattern": "<\\w+\\s+"
+        }
+    ]
+}
