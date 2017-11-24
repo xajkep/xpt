@@ -104,6 +104,8 @@ Available contexts:
  * external-script-single-quoted
  * external-script-double-quoted
  * external-script-template-string-backticked
+ * iframe-srcdoc-htmlescaped
+ * data-uri-texthtml-htmlescaped
 
 You can edit contexts in `contexts.json` file.
 
