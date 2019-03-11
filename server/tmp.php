@@ -1,2 +1,1 @@
-var b=String.raw`jaVaSCriPt:/*\x3csvG/oNloAd=alert()\x3e*/alert()//</stYle/</tiTle/</texTarEa/</scrIpt/--!><sVg//*`/*"/*'/**/(_=alert())//\
-;alert()//'/oNlOad=alert() OncLick=alert()//>;base64,PHN2Zy9vbmxvYWQ9YWxlcnQoKT4K`;
+var b=String.raw`<svg/onload=alert()>`;

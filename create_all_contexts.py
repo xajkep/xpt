@@ -76,7 +76,7 @@ for context in contexts:
     file_path = "%s/%s.php" % (SERVER_PATH, context['name'])
     file_content = HTML_DOCUMENT % (head, body)
 
-    print "Writing %s" % file_path
+    print("Writing %s" % file_path)
     fd = open(file_path, 'w')
     fd.write(file_content)
     fd.close()

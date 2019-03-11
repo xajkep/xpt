@@ -33,6 +33,9 @@ cd xpt/
 # Create all contexts
 python create_all_contexts.py
 
+# Install NodeJS dependencies
+npm install
+
 # Start local Web server 
 cd server/
 php -S 127.0.0.1:8080
