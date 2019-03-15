@@ -79,20 +79,20 @@ XSS = "jaVaSCriPt:/*\\x3csvG/oNloAd=alert()\\x3e*/alert()//</stYle/</tiTle/</tex
 #XSS = "jaVasCript:/*-/*`/*\\`/*'/*\"/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\\x3csVg/<sVg/oNloAd=alert()//>\\x3e"
 
 def info(s):
-    print colored("[+] %s" % s, "white")
+    print(colored("[+] %s" % s, "white"))
 
 def action(s):
-    print colored("[-] %s" % s, "yellow")
+    print(colored("[-] %s" % s, "yellow"))
 
 def fail(s):
-    print colored("[!] %s" % s, "red")
+    print(colored("[!] %s" % s, "red"))
 
 def success(s):
-    print colored("[+] %s" % s, "blue")
+    print(colored("[+] %s" % s, "blue"))
 
 def verbose(s):
     if VERBOSE:
-        print colored("[v] %s" % s, "grey")
+        print(colored("[v] %s" % s, "grey"))
 
 CONTEXTS_FILE = "contexts.json"
 FILTERS_FILE = "filters.json"
@@ -122,16 +122,21 @@ def test_contexts(XSS, selected_context = None):
         action("Testing %s" % context['name'])
         
         url = "http://127.0.0.1:8080/%s.php?c=%s" % (context['name'], XSS)
-        a = subprocess.Popen(
-            ['/usr/bin/nodejs', 'index.js', '--url', url],
-            stdout=subprocess.PIPE).stdout.read()
+
+        command = [
+            '/usr/bin/nodejs', 
+            'index.js', 
+            '--url', 
+            url,
+        ]
+        a = subprocess.Popen(command, stdout=subprocess.PIPE).stdout.read()
         if a.find("1337") > -1:
             success("alert detected !")
             execution_counter += 1
         else:
             fail("not executed") 
 
-        print ""
+        print("")
 
     elapsed_time = time() - start_time
     info("Executed in %i/%i contexts in %.2f seconds" % (execution_counter, len(contexts), elapsed_time))
@@ -184,7 +189,7 @@ def run_tests(selected_context = None):
         else:
             fail("not executed") 
 
-        print ""
+        print("")
 
     elapsed_time = time() - start_time
     nb_tests = len(contexts)
@@ -206,7 +211,7 @@ def list_all_contexts(target=''):
     entities = json.loads(open(file, 'r').read())[target+'s']
 
     for entity in entities:
-        print entity['name']
+        print(entity['name'])
 
 
 def main():
@@ -238,7 +243,7 @@ def main():
     else:
         verbose("No XSS payload set with --xss argument, using the default payload:")
         verbose(XSS)
-        print ""
+        print("")
         xss = XSS
 
     if args.mode == 'filter':

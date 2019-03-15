@@ -1,0 +1,25 @@
+{
+  "name": "xpt",
+  "version": "1.0.0",
+  "description": "XPT is a XSS polyglot testing platform allowing to test an XSS polyglot in more than 30 contexts in less than 1 minute.",
+  "main": "index.js",
+  "dependencies": {
+    "chromedriver": "^2.46.0",
+    "minimist": "^1.2.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xajkep/xpt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xajkep/xpt/issues"
+  },
+  "homepage": "https://github.com/xajkep/xpt#readme"
+}
